@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      body { margin: 0; padding: 12px 14px; font: 13px system-ui, sans-serif; width: 240px; }
+      label { display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: 600; }
+      p { margin: 8px 0 0; color: #666; font-size: 12px; line-height: 1.4; }
+      #session { color: #1a1a1a; font-weight: 500; }
+      #elsewhere { margin: 0; color: #1a1a1a; font-size: 13px; }
+      [hidden] { display: none !important; }
+    </style>
+  </head>
+  <body>
+    <!-- Both views start hidden; popup.js shows one once it knows which page the tab is on. -->
+    <div id="editor-view" hidden>
+      <label><input type="checkbox" id="enabled"> Keep session awake</label>
+      <p id="session"></p>
+      <p id="status"></p>
+    </div>
+    <p id="elsewhere" hidden>Please navigate to the Autonomous custom flow editor to use keep-awake features.</p>
+    <script src="popup.js"></script>
+  </body>
+</html>

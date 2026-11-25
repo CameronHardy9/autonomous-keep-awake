@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Autonomous Keep Awake",
+  "version": "1.2.0",
+  "description": "Keeps an Applitools Autonomous Interactive Browser session alive through a limited period of inactivity",
+  "permissions": ["storage", "alarms"],
+  "host_permissions": ["https://keep-awake-config.invalid/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_title": "Autonomous Keep Awake",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.applitools.com/*"],
+      "js": ["page-hook.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["*://*.applitools.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}

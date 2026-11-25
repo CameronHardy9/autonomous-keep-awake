@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Local Claude Code settings and notes (CLAUDE.md documents app internals; keep it out of the public repo)
+.claude/settings.local.json
+CLAUDE.md
+
+# Packaged builds
+*.zip
+*.crx
+*.pem
